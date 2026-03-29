@@ -24,6 +24,7 @@ export default function ProjectCard({ img, title }) {
           <Image
             src={img}
             preview={true}
+            className="project-img"
             style={{
               width: "100%",
               height: "100%",

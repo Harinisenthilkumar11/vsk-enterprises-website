@@ -1,3 +1,4 @@
+
 import { Box, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 
@@ -30,23 +31,27 @@ export default function HeroCarousel() {
   return (
     <Box
       sx={{
-        height: "90vh",
+        width: "100%",
+        height: { xs: "55vh", sm: "65vh", md: "80vh", lg: "90vh" }, // responsive height
         backgroundImage: `url(${slides[index].img})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         color: "#fff",
         textAlign: "center",
-        transition: "0.8s ease-in-out"
+        transition: "0.8s ease-in-out",
+        backgroundBlendMode: "darken",
+backgroundColor: "rgba(0,0,0,0.1)",
       }}
     >
       <Typography
-        variant="h3"
         sx={{
           fontWeight: "bold",
-          animation: "zoomIn 1.5s ease"
+          fontSize: { xs: "26px", sm: "34px", md: "48px" }, // responsive text
+          px: 2
         }}
       >
         {slides[index].title}
